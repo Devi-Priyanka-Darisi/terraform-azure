@@ -23,3 +23,9 @@ resource "azurerm_network_security_rule" "tf-nsg-dev-rule" {
   resource_group_name         = azurerm_resource_group.tf-rg.name
   network_security_group_name = azurerm_network_security_group.tf-nsg.name
 }
+
+# Associating NSG with subnet
+resource "azurerm_subnet_network_security_group_association" "tf-nsg-a" {
+  subnet_id                 = azurerm_subnet.tf-subnet.id
+  network_security_group_id = azurerm_network_security_group.tf-nsg.id
+}
