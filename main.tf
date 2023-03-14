@@ -17,7 +17,7 @@ provider "azurerm" {
 resource "azurerm_resource_group" "tf-rg" {
   name     = "terraform"
   location = "East US"
-   tags = {
+  tags = {
     environment = "dev"
   }
 }
